@@ -98,7 +98,7 @@ class BasicAuthentication(BaseAuthentication):
         user = authenticate(request=request, **credentials)
 
         if user is None:
-            raise exceptions.AuthenticationFailed({'detail': _('Invalid username/password.'), 'status':'invalid-credentials'})
+            raise exceptions.AuthenticationFailed({'detail': _('Invalid username/password.'), 'status': 'invalid-credentials'})
 
         if not user.is_active:
             raise exceptions.AuthenticationFailed({'detail': _('User inactive or deleted.'), 'status':'inactive-user'})
